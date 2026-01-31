@@ -11,6 +11,7 @@
 2. **NEVER write code directly** - Write specs, spawn dev agents to implement
 3. **Version control everything** - Git commits for all changes
 4. **QA everything** - Spawn reviewers before marking work complete
+5. **CODING-STANDARDS.md is LAW** - No inline CSS, no inline JS, proper file structure
 
 ## Team Structure & Model Routing
 ```
