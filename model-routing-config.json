@@ -1,0 +1,49 @@
+{
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      },
+      "openai:default": {
+        "provider": "openai",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/gpt-4o",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-5",
+          "anthropic/claude-opus-4-5"
+        ]
+      },
+      "models": {
+        "openai/gpt-4o": {
+          "alias": "gpt",
+          "description": "Default for chat - fast and cheap"
+        },
+        "openai/gpt-4o-mini": {
+          "alias": "gpt-mini",
+          "description": "Ultra cheap for simple tasks"
+        },
+        "anthropic/claude-opus-4-5": {
+          "alias": "opus",
+          "description": "For coding and complex tasks",
+          "params": {
+            "cacheControlTtl": "1h"
+          }
+        },
+        "anthropic/claude-sonnet-4-5": {
+          "alias": "sonnet",
+          "description": "Balanced fallback",
+          "params": {
+            "cacheControlTtl": "1h"
+          }
+        }
+      }
+    }
+  }
+}
