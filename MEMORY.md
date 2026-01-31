@@ -69,3 +69,53 @@ Post-event inbox archaeology (flights/hotels/taxis) → invoice teams
 - SEO tanking (192 404 errors)
 - Competitor pressure (Track Titan, VRS)
 - Content machine: ~100 items/week
+
+## 📋 Delegation Rules (CTO Operating Model)
+
+### When to Delegate
+- **Always delegate:** Code writing, testing, repetitive tasks
+- **Never delegate:** Architecture decisions, spec writing, David communication
+
+### How to Delegate
+1. **Write a clear spec** before spawning any agent
+2. **Spawn with label** for tracking (e.g., `qa-xero-page`, `dev-parser-fix`)
+3. **Set model appropriately:**
+   - Dev work: `openai/gpt-5.2` (Codex)
+   - QA/testing: `anthropic/claude-sonnet-4-5`
+4. **Check results** - don't assume success
+
+### Task Flow
+```
+David Request → Clark thinks/specs → Spawn dev agent → Spawn QA agent → Clark reviews → Report to David
+```
+
+### Active Sub-Agent Labels
+- `qa-xero-page` - Testing Xero validation page
+- (add more as created)
+
+### Key Lesson
+**Test with your own eyes (or spawn someone who can).** Don't assume code works - verify.
+
+## 🎉 Xero Validation Page - WORKING (2026-01-31)
+
+**Status:** Page functional, displaying results correctly.
+
+**What Works:**
+- Metrics display: 110 transactions, 79 invoices, 71 matches
+- Accuracy scores: 90% categorization, 90% reconciliation  
+- Live logs: Shows matched invoice pairs
+- Auto-loads saved results on page load
+- Start Validation button present
+
+**Known Bugs to Fix:**
+1. **Accuracy bar visual** - Shows 0% width but text says 90% (CSS/JS bug)
+2. **Error banner persists** - Shows old Xero auth error even when displaying saved results
+
+**Blockers for Live Validation:**
+- Xero OAuth tokens expired (30 min lifespan)
+- Need to re-authenticate or add token refresh
+
+**Current Accuracy:** 89.9% (71/79 invoices matched)
+- 8 unmatched: 5 from July-Aug 2025 (newer than export), 3 with amount differences
+
+**Screenshot saved:** 2026-01-31 22:38 GMT - First working validation page!
