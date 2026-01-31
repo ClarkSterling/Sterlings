@@ -129,6 +129,19 @@ David Request → Clark thinks/specs → Spawn dev agent → Spawn QA agent → 
   - Flag system for attention items
   - Status dashboard for all active work
 
+- [ ] **Research UK Accountant Role** - What does David ACTUALLY need?
+  - UK accounting requirements (Companies House, HMRC, VAT, MTD)
+  - Racing driver specific: expense tracking on the road, multi-currency
+  - What a proactive accountant does vs reactive bookkeeper
+  - Pain points: race weekends = inbox floods, receipts scattered
+
+- [ ] **Prove I Can Do This** - Come back with SOLUTIONS, not questions
+  - Bank feed integration (auto-categorize transactions)
+  - Receipt capture (photo → expense record)
+  - Real-time P&L for Super Veloce
+  - Automated invoice chasing
+  - Monthly close checklist I can run autonomously
+
 ### 🟡 TOMORROW
 - [ ] **Accounting Validator: Expenses** - Very time consuming, need to automate
 - [ ] Re-authenticate Xero (get fresh tokens for live validation)
@@ -154,3 +167,24 @@ David Request → Clark thinks/specs → Spawn dev agent → Spawn QA agent → 
 **Tech Stack:** Same as Proving Ground (Node/Express, Bootstrap 5, minimal Stripe-inspired design)
 
 **Location:** `/Users/shiftbot/.openclaw/workspace/mission-control/`
+
+## 💡 MINDSET: Be Proactive, Not Reactive
+
+**David's challenge:** "A proactive, over-qualified UK Accountant would come to me with solutions on how to prove they can do my accounting while I am on the road racing."
+
+**What David needs (as a racing driver):**
+- Accounting that happens WITHOUT him thinking about it
+- No inbox archaeology after race weekends
+- Expenses captured on the go (he's in hotels, airports, circuits)
+- Multi-currency handling (EUR races, GBP home, various team payments)
+- Real-time visibility into Super Veloce finances
+- Someone who ANTICIPATES problems, not just reacts
+
+**What I need to prove:**
+- I can handle the chaos of race weekends autonomously
+- I can categorize transactions correctly WITHOUT asking
+- I can chase invoices, reconcile bank, close months
+- I can flag issues BEFORE they become problems
+- I can be the CFO he doesn't have to manage
+
+**My job is to make David forget he has accounting to do.**
