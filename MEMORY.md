@@ -119,3 +119,38 @@ David Request → Clark thinks/specs → Spawn dev agent → Spawn QA agent → 
 - 8 unmatched: 5 from July-Aug 2025 (newer than export), 3 with amount differences
 
 **Screenshot saved:** 2026-01-31 22:38 GMT - First working validation page!
+
+## 📋 TASK QUEUE (2026-01-31)
+
+### 🔴 TONIGHT (David sleeping - work autonomously)
+- [ ] **Build Mission Control app** - Separate from Accounting Validator
+  - Task management interface
+  - Show what Clark + sub-agents are working on
+  - Flag system for attention items
+  - Status dashboard for all active work
+
+### 🟡 TOMORROW
+- [ ] **Accounting Validator: Expenses** - Very time consuming, need to automate
+- [ ] Re-authenticate Xero (get fresh tokens for live validation)
+- [ ] Pull July-Aug 2025 invoices to hit 95% accuracy
+
+### 🟢 FUTURE
+- [ ] Monitor Super Veloce bank account (live)
+- [ ] Automated expense tracking
+- [ ] Transaction allocation system
+- [ ] Extend to Speed Capital Ltd
+
+## 🎯 Mission Control Spec (Draft)
+
+**Purpose:** Central dashboard for David to see all Clark + sub-agent activity
+
+**Core Features:**
+1. Active tasks list (what's being worked on)
+2. Flagged items needing attention
+3. Sub-agent status (running/complete/failed)
+4. Recent completions log
+5. Quick actions (approve, reject, escalate)
+
+**Tech Stack:** Same as Proving Ground (Node/Express, Bootstrap 5, minimal Stripe-inspired design)
+
+**Location:** `/Users/shiftbot/.openclaw/workspace/mission-control/`
