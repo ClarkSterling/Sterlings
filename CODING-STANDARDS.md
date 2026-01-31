@@ -219,16 +219,50 @@ Before submitting code, verify:
 - [ ] Console has no errors
 - [ ] Code is commented where logic is non-obvious
 
-## 🎯 Stripe-Inspired Design System
+## 🎯 Design System
 
-Our default aesthetic (unless specified otherwise):
+### Bootstrap 5 is MANDATORY
+All frontend projects MUST use Bootstrap 5. No exceptions.
 
-- **Colors**: Purple primary (#635bff), navy text, light gray backgrounds
+```html
+<!-- Required in <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Required before </body> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+Use Bootstrap's:
+- Grid system (`container`, `row`, `col-*`)
+- Components (cards, buttons, modals, alerts, badges)
+- Utilities (spacing, colors, flexbox, display)
+- Dark mode via `data-bs-theme="dark"`
+
+### Stripe-Inspired Dark Theme (Default)
+
+- **Background**: Dark navy (#0a0e1a), charcoal surfaces (#1a1f2e)
+- **Primary**: Purple (#635bff), lighter hover (#7c75ff)
+- **Text**: White primary, muted gray (#9ca3af) secondary
+- **Accents**: Green success (#10b981), amber warning (#f59e0b), red error (#ef4444)
+- **Cards**: Charcoal with subtle border, no heavy shadows
 - **Typography**: System font stack, 14px base
-- **Spacing**: 8px grid system
-- **Cards**: White with subtle shadow, 8px radius
-- **Buttons**: Solid primary, ghost secondary
-- **Forms**: Floating labels or top-aligned labels
+
+### Dark Mode CSS Variables
+```css
+:root[data-bs-theme="dark"] {
+  --color-bg: #0a0e1a;
+  --color-surface: #1a1f2e;
+  --color-surface-hover: #252b3d;
+  --color-border: #2d3548;
+  --color-primary: #635bff;
+  --color-primary-hover: #7c75ff;
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
 
 ## 📝 Git Commit Standards
 
