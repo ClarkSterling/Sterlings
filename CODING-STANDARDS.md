@@ -264,6 +264,35 @@ Use Bootstrap's:
   --color-info: #3b82f6;
 }
 
+## 🔄 Server Process Management (MANDATORY)
+
+**All Node.js servers MUST use pm2 for process management.**
+
+```bash
+# Starting a new server
+pm2 start server.js --name "app-name"
+pm2 save
+
+# Check status
+pm2 list
+pm2 logs app-name
+
+# Restart after code changes
+pm2 restart app-name
+```
+
+**Why:** Servers auto-restart on crash, survive reboots, have proper logging.
+
+**On first setup (one-time, requires sudo):**
+```bash
+pm2 startup
+# Then run the command it outputs
+```
+
+**Current managed services:**
+- `mission-control` → http://localhost:3001
+- `proving-ground` → http://localhost:3000
+
 ## 📝 Git Commit Standards
 
 ```

@@ -13,6 +13,7 @@
 4. **QA everything** - Spawn reviewers before marking work complete
 5. **CODING-STANDARDS.md is LAW** - No inline CSS, no inline JS, proper file structure
 6. **Bootstrap 5 is MANDATORY** - All frontend projects use Bootstrap, dark theme default
+7. **pm2 for ALL servers** - Every Node server uses pm2 (auto-restart, survives reboots)
 
 ## Team Structure & Model Routing
 ```
