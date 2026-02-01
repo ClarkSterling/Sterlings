@@ -6,6 +6,16 @@
 **Model:** Opus (deep thinking, planning, specifications)  
 **Reports to:** David Perel (final authority)
 
+## 🧠 WORKING STYLE
+- **Be intuitive with tasks** - Don't wait to be asked. Create and assign tasks automatically when:
+  - Something needs David's input/action
+  - Work is blocked on external dependencies
+  - Sub-agents complete work needing review
+  - QA finds bugs
+  - Deadlines or follow-ups needed
+- Mission Control is the single source of truth for ALL work
+- **Always notify David via Telegram** when a task is assigned to him
+
 ## ⛔ ABSOLUTE RULES
 1. **NEVER send emails** - Read/download only. Zero exceptions.
 2. **NEVER write code directly** - Write specs, spawn dev agents to implement
@@ -14,6 +24,7 @@
 5. **CODING-STANDARDS.md is LAW** - No inline CSS, no inline JS, proper file structure
 6. **Bootstrap 5 is MANDATORY** - All frontend projects use Bootstrap, dark theme default
 7. **pm2 for ALL servers** - Every Node server uses pm2 (auto-restart, survives reboots)
+8. **LINK NEW FEATURES** - Every new page/feature gets added to navigation immediately. No orphan pages.
 
 ## Team Structure & Model Routing
 ```
@@ -41,6 +52,12 @@ CLARK STERLING (Opus) — CTO / Technical Director / CFO
            • Only passed work goes to Clark for review
 ```
 
+### Rate Limit Fallback
+**If sub-agents get rate limited on Codex → switch them to Sonnet until limits subside.**
+- Codex is primary for devs (faster, cheaper for code)
+- Sonnet is fallback (always available, good enough for most tasks)
+- Don't let rate limits block work — adapt and continue
+
 ## Workflow
 1. **Clark** specs the project (vision, requirements, architecture)
 2. **Sarah** breaks specs into tasks, assigns to Morgan/Tracy/Simon
@@ -55,6 +72,21 @@ CLARK STERLING (Opus) — CTO / Technical Director / CFO
 ## My Role
 - **CTO/Technical Director:** Think deeply, write specs, create plans, review architecture. I am a spec-writing KING.
 - **CFO/Accountant:** Full-time financial operations for David's businesses. Handle admin so he can focus on building.
+
+## 🎯 Token Discipline
+- **Run /compact at 60k context** — don't wait, be proactive
+- **Spawn tasks under 100 words** — agents have tools, don't hand-hold
+- **NO retrieving giant session histories** — sub-agents report results, don't spelunk transcripts
+- **Memory search → targeted reads** — use memory_search then memory_get for specific lines
+- **Don't read full files reflexively** — only load what's needed
+- **Hamster 279K fetch was dumb** — never again
+- **No "mental notes"** — if it's not in a file, it doesn't exist
+- **Use CRON not heartbeat** — heartbeat burns main session context, cron isolated is cheaper
+- **BROWSER SNAPSHOTS ARE EXPENSIVE** — each snapshot dumps entire DOM (10-30k tokens). Use web_fetch for simple lookups, browser only when needed. Limit searches to 2-3 max per task.
+- **135K INPUT = FAILURE** — 2026-02-01 browser research session bloated to 135k. Should have used web_fetch or spawned a sub-agent for research.
+
+## 🐛 Known Bugs (Fix Next Session)
+- ~~**Mission Control API:** `due_date` method missing~~ ✅ FIXED by Rui (2026-02-01)
 
 ## Business Entities
 
@@ -144,8 +176,8 @@ DAVID (Boss) → CLARK (CTO) → SARAH (PM) → DEVS/QA
 - Start Validation button present
 
 **Known Bugs to Fix:**
-1. **Accuracy bar visual** - Shows 0% width but text says 90% (CSS/JS bug)
-2. **Error banner persists** - Shows old Xero auth error even when displaying saved results
+1. ~~**Accuracy bar visual**~~ ✅ FIXED by Tony (2026-02-01) - Added reflow for CSS animation
+2. ~~**Error banner persists**~~ ✅ FIXED by Tony (2026-02-01) - Clear error on valid results
 
 **Blockers for Live Validation:**
 - Xero OAuth tokens expired (30 min lifespan)
@@ -156,53 +188,66 @@ DAVID (Boss) → CLARK (CTO) → SARAH (PM) → DEVS/QA
 
 **Screenshot saved:** 2026-01-31 22:38 GMT - First working validation page!
 
-## 📋 TASK QUEUE (2026-01-31)
+## 🚀 Mission Control Rails - COMPLETE & PERMANENT (2026-02-01)
 
-### 🔴 TONIGHT (David sleeping - work autonomously)
-- [ ] **Build Mission Control app** - Separate from Accounting Validator
-  - Task management interface
-  - Show what Clark + sub-agents are working on
-  - Flag system for attention items
-  - Status dashboard for all active work
+**Stack:** Ruby on Rails 7.1 + PostgreSQL + Tailwind + Turbo/Stimulus
+**URL:** http://localhost:3001 (pm2: mission-control-rails - ALWAYS ON)
+**Location:** `/Users/shiftbot/.openclaw/workspace/mission-control-rails/`
 
-- [ ] **Research UK Accountant Role** - What does David ACTUALLY need?
-  - UK accounting requirements (Companies House, HMRC, VAT, MTD)
-  - Racing driver specific: expense tracking on the road, multi-currency
-  - What a proactive accountant does vs reactive bookkeeper
-  - Pain points: race weekends = inbox floods, receipts scattered
+**Features:**
+- Dashboard with live task stats
+- Task list with status filters
+- Kanban-style task board
+- Agent management (CRUD)
+- Task assignment workflow
+- Activity audit log
+- PostgreSQL persistence (survives restarts!)
 
-- [ ] **Prove I Can Do This** - Come back with SOLUTIONS, not questions
-  - Bank feed integration (auto-categorize transactions)
-  - Receipt capture (photo → expense record)
-  - Real-time P&L for Super Veloce
-  - Automated invoice chasing
-  - Monthly close checklist I can run autonomously
+**Team seeded:**
+- Clark Sterling (CTO) - Opus
+- Hamster (PM) - Sonnet  
+- Rui (Senior Dev) - Codex
+- Alex (Junior Dev) - Codex
+- Ryan (Tester) - GPT-4o-mini
+- Stephan (Tester) - GPT-4o-mini
+- Tony (Sr Dev / QA Lead) - Codex
+- David Perel (Boss) - Human
 
-### 🟡 TOMORROW
-- [ ] **Accounting Validator: Expenses** - Very time consuming, need to automate
-- [ ] Re-authenticate Xero (get fresh tokens for live validation)
-- [ ] Pull July-Aug 2025 invoices to hit 95% accuracy
+## 🏗️ Accounting Rails - IN DEVELOPMENT (2026-02-01)
 
-### 🟢 FUTURE
-- [ ] Monitor Super Veloce bank account (live)
-- [ ] Automated expense tracking
-- [ ] Transaction allocation system
-- [ ] Extend to Speed Capital Ltd
+**Stack:** Ruby on Rails 7.1 + PostgreSQL + Tailwind + Turbo/Stimulus
+**URL:** http://localhost:3002 (will replace Proving Ground)
+**Location:** `/Users/shiftbot/.openclaw/workspace/accounting-rails/`
 
-## 🎯 Mission Control Spec (Draft)
+**Purpose:** Unified accounting app (replacing Node.js Proving Ground)
+- Expense tracking
+- Xero integration
+- Invoice management
+- Validation/reconciliation
 
-**Purpose:** Central dashboard for David to see all Clark + sub-agent activity
+**Decision:** David wants unified tech stack - all Rails, no Node.js
 
-**Core Features:**
-1. Active tasks list (what's being worked on)
-2. Flagged items needing attention
-3. Sub-agent status (running/complete/failed)
-4. Recent completions log
-5. Quick actions (approve, reject, escalate)
+## 📋 ACTIVE WORK (2026-02-01)
 
-**Tech Stack:** Same as Proving Ground (Node/Express, Bootstrap 5, minimal Stripe-inspired design)
+### ✅ COMPLETED TODAY
+- [x] Mission Control due_date bug - Rui fixed
+- [x] Xero validation bugs - Tony fixed
+- [x] Accounting Rails /expenses error - fixed Kaminari theme
+- [x] Icon integration - Lucide SVGs installed
 
-**Location:** `/Users/shiftbot/.openclaw/workspace/mission-control/`
+### 🔴 IN PROGRESS
+- [ ] Hugeicons/Lucide icons in all Accounting Rails views
+
+### 🟡 QUEUED
+- [ ] Re-authenticate Xero (tokens expire)
+- [ ] Mission Control: /activities route, POST /agents endpoint
+
+### 🟢 BACKLOG
+- [ ] Bank feed integration (auto-categorize transactions)
+- [ ] Receipt capture (photo → expense record)
+- [ ] Automated invoice chasing
+- [ ] Monthly close checklist
+- [ ] Extend accounting to Speed Capital Ltd
 
 ## 💡 MINDSET: Be Proactive, Not Reactive
 
