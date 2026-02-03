@@ -4,10 +4,11 @@
 **Dev flow lives in MEMORY.md — read it before ANY code change.**
 
 ## Priority Order
-1. **Test apps are running** — `pm2 status`, curl each endpoint
-2. **Sub-agents** — Check sessions_list for completed work. Process results.
-3. **Blocked tasks** — Review MEMORY.md "In Progress". Continue if unblocked.
-4. **New builds** — Only after above checks pass
+1. **Mission Control** — Check for outstanding tasks. This is the source of truth.
+2. **Test apps are running** — `pm2 status`, curl each endpoint
+3. **Sub-agents** — Check sessions_list for completed work. Process results.
+4. **Blocked tasks** — Continue if unblocked.
+5. **New builds** — Only after above checks pass
 
 ## QA Checklist (Run Before Every Deploy)
 ```bash
