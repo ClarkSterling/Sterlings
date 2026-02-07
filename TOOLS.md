@@ -5,14 +5,14 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 ## ⛔ HARD RULES - NEVER VIOLATE
 
 ### Email
-**NEVER send emails. Zero exceptions.**
+**Only email David: david@speedcapital.co.uk**
 - ✅ Read emails
 - ✅ Download attachments
 - ✅ Summarize/analyze content
-- ❌ Send emails
-- ❌ Reply to emails
+- ✅ Send emails to David (david@speedcapital.co.uk)
+- ❌ Send emails to anyone else
+- ❌ Reply to emails from others
 - ❌ Forward emails
-- ❌ Draft emails for sending
 
 This rule is absolute and permanent.
 
