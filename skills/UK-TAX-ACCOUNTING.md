@@ -227,6 +227,101 @@ When AIA limit exceeded or assets don't qualify:
 | Reduced | 5% |
 | Zero | 0% |
 
+---
+
+## UK VAT Invoice Requirements (HMRC Compliant)
+
+### Mandatory Elements for Full VAT Invoices (over £250)
+
+A valid UK VAT invoice **must** include:
+
+| Element | Description | Example |
+|---------|-------------|---------|
+| **Unique invoice number** | Sequential, no gaps | INV-2026-0001 |
+| **Invoice date** | Date invoice issued | 8 February 2026 |
+| **Supply date (tax point)** | When goods/services provided | 5 February 2026 |
+| **Seller name & address** | Full legal trading name + registered address | Super Veloce Ltd, 123 High Street... |
+| **Seller VAT number** | GB followed by 9 digits | GB 123 456 789 |
+| **Buyer name & address** | Customer's full details | Alberto Duran, Carrer de... |
+| **Buyer VAT number** | Required for B2B if VAT registered | ES B12345678 (if applicable) |
+| **Description of goods/services** | Clear itemized list | "Racing driver coaching - Barcelona" |
+| **Quantity & unit price** | Per line item | 1 x £2,500.00 |
+| **VAT rate per item** | Must show rate applied | 20% |
+| **Total excluding VAT** | Subtotal before tax | £2,950.00 |
+| **VAT amount** | Broken down by rate | VAT @ 20%: £590.00 |
+| **Total including VAT** | Grand total | £3,540.00 |
+| **Currency** | Must be clear (GBP for UK) | £ symbol or "GBP" |
+
+### Simplified VAT Invoices (under £250)
+
+For invoices under £250, you can use a simplified invoice with:
+- Seller name, address, VAT number
+- Invoice date
+- Description of goods/services
+- Total amount including VAT
+- VAT rate applied
+
+### Additional Best Practices
+
+**Payment Information:**
+- Bank name, sort code, account number
+- Payment terms (e.g., "Due within 30 days")
+- Accepted payment methods
+
+**Company Registration:**
+- Include Companies House registration number
+- Required if trading as a limited company
+
+**Pro Forma Invoices:**
+- Clearly mark as "PRO FORMA" — not a VAT invoice
+- Cannot be used to reclaim VAT
+- Use for quotes/advance payment requests
+
+### Common Mistakes to Avoid
+
+❌ Missing supply date (different from invoice date)
+❌ VAT number without "GB" prefix
+❌ No breakdown of VAT by rate
+❌ Missing sequential invoice numbers
+❌ Vague descriptions ("Services rendered")
+❌ No company registration number
+
+### Invoice Number Format
+
+Recommended format: `INV-YYYY-NNNN`
+- YYYY = Year
+- NNNN = Sequential number (zero-padded)
+- Example: INV-2026-0001, INV-2026-0002...
+
+Must be:
+- Unique within your business
+- Sequential (no gaps)
+- Easy to reference
+
+### Tax Point (Supply Date) Rules
+
+The tax point determines which VAT period the transaction falls into:
+
+| Scenario | Tax Point |
+|----------|-----------|
+| Goods collected | Date of collection |
+| Goods delivered | Date of delivery |
+| Services completed | Date service completed |
+| Invoice issued before delivery | Invoice date |
+| Payment received before delivery | Date of payment |
+
+**14-day rule:** If you issue an invoice within 14 days of the basic tax point, the invoice date becomes the tax point.
+
+### Credit Notes
+
+When issuing a credit note (refund/correction):
+- Reference original invoice number
+- Use same format as invoices
+- Negative amounts or clearly marked "Credit"
+- Must include all mandatory VAT invoice elements
+
+---
+
 ### VAT Schemes
 
 **Flat Rate Scheme:**
