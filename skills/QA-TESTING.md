@@ -1,5 +1,34 @@
 # QA Testing Skill
 
+---
+
+## Routing Logic
+
+### ✅ USE this skill when:
+- Sub-agent has completed a coding task and you need to verify it works
+- About to merge a feature branch to main
+- Deploy is imminent and you need pre-deploy checks
+- User reports something is broken and you need to diagnose
+- UI change was made and you need to confirm all instances were updated
+
+### ❌ DON'T USE this skill when:
+- Just checking if an app is running (use `pm2 status` or quick curl)
+- Heartbeat health checks (those have their own simpler checklist)
+- Writing new code (use DELEGATION.md first, then come back here)
+- Reviewing code quality/architecture (that's code review, not QA)
+
+### ⚠️ Edge Cases:
+- **"It looks fine to me"** → Not good enough. Run the grep checks anyway.
+- **HTTP 200 returned** → Doesn't mean it works. Check actual content.
+- **Sub-agent says "done"** → Trust but verify. Run render checks.
+
+### Expected Outputs:
+- Specific pass/fail per check
+- Bug report if issues found (20 words max)
+- Git commit if you fixed something
+
+---
+
 ## ⚠️ Rules
 - **CLI only** — Use `curl` to test pages, not browser/screenshots. Saves tokens.
 - **Audit EVERYTHING** — grep for ALL instances before declaring done

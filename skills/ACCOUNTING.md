@@ -1,5 +1,34 @@
 # Accounting Skill
 
+---
+
+## Routing Logic
+
+### ✅ USE this skill when:
+- Importing expenses from CSV/bank exports
+- Cross-referencing transactions with Xero
+- Categorizing expenses for Super Veloce or Speed Capital
+- Cleaning up data issues (NULL values, bad fx_rates, crypto transfers)
+- Working with the accounting-rails app
+
+### ❌ DON'T USE this skill when:
+- UK tax questions (use UK-TAX-ACCOUNTING.md instead)
+- Creating invoices (use invoice-creation skill)
+- General bookkeeping theory questions
+- Xero API token issues (check cron job status first)
+
+### ⚠️ Edge Cases:
+- **Multi-currency expense** → Always check fx_rate sanity (amount_gbp < 50000)
+- **Crypto transactions** → Delete, don't categorize
+- **Duplicate imports** → Check date range overlap before importing
+
+### Expected Outputs:
+- Transaction counts (imported, categorized, cleaned)
+- Any data anomalies flagged
+- Git commit if schema/data changed
+
+---
+
 ## Apps
 - **Accounting Rails**: localhost:3002 | `/Users/shiftbot/.openclaw/workspace/accounting-rails/`
 - **Xero Client**: `/Users/shiftbot/.openclaw/workspace/clarks-proving-ground/xero-client.js`

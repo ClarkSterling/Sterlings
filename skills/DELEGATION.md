@@ -2,6 +2,31 @@
 
 *Clark's ruleset for delegating work without blowing up context or hitting rate limits.*
 
+---
+
+## Routing Logic
+
+### ✅ USE this skill when:
+- About to write code (any code change = delegate to dev agent)
+- Task is isolated and doesn't need conversation history
+- Research would bloat context (web searches, doc reading, large file analysis)
+- Multiple independent tasks can run in parallel
+- Task requires >2 tool calls you'd wait on
+
+### ❌ DON'T USE this skill when:
+- Quick single tool call (just do it)
+- User needs immediate response and task takes <30 seconds
+- Task requires YOUR conversation context to answer correctly
+- Making sensitive decisions (money transfers, external comms, deletions)
+- Simple file reads or status checks
+
+### ⚠️ Edge Cases:
+- **Bug fix that seems small** → Still delegate. "Small" fixes often aren't.
+- **Sub-agent failed 3 times** → Do it yourself as last resort, but note why.
+- **User says "quick"** → Doesn't change the rule. Delegate if it's code.
+
+---
+
 ## When to Delegate
 
 **Spawn when:**
